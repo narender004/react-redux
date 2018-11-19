@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class About extends Component {
     render() {
@@ -12,5 +13,18 @@ class About extends Component {
     }
 }
 
+function mapStateTOProps(state)
+{
+    return({
+        userName:state.rootReducer.userName
+    })
+}
 
-export default About;
+function mapDispatchTOProps(dispatch)
+{
+     return({
+     
+    })
+
+}
+export default connect(mapStateTOProps,mapDispatchTOProps)(About);
